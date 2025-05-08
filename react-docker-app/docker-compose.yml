@@ -6,13 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "5173:5173"
     volumes:
       - ./src:/app/src
       - ./public:/app/public
     environment:
       - CHOKIDAR_USEPOLLING=true
-    command: npm start
+    command: npm run dev -- --host
 
 networks:
   default:
